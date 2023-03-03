@@ -119,7 +119,6 @@ async def play_next(ctx, voice_client):
                 os.remove(f"music/{filename}.mp3")
             else:
                 pass
-            await play_next(ctx, voice_client)
 
 @bot.command()
 async def stop(ctx):
