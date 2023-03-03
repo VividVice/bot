@@ -155,4 +155,4 @@ async def resume(ctx):
     else:
         await ctx.send("Not currently paused.")
 
-bot.run('MTA4MDExNTc5MDYxMjgxMTkyOQ.GmWIeo.qtuQq6njKfAWfAVeRaDVd-c9P5xLJU1LFGIVh4')
+bot.run('TOKEN HERE')
