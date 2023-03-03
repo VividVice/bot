@@ -84,7 +84,10 @@ async def play(ctx, url=None):
         if playing == False:
             voice.stop()
             voice.cleanup()
-            os.remove(f"music/{filename}.mp3")
+            if filename in os.listdir('music'):
+                os.remove(f"music/{filename}.mp3")
+            else:
+                pass
             await play_next(ctx, voice_client)
     else:
         await ctx.send("You need to be in a voice channel to use this command!")
@@ -110,7 +113,10 @@ async def play_next(ctx, voice_client):
         if playing == False:
             voice_client.stop()
             voice_client.cleanup()
-            os.remove(f"music/{filename}.mp3")
+            if filename in os.listdir('music'):
+                os.remove(f"music/{filename}.mp3")
+            else:
+                pass
             await play_next(ctx, voice_client)
 
 @bot.command()
