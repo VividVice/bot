@@ -82,9 +82,10 @@ async def play(ctx, url=None):
             await asyncio.sleep(1)
         playing = False
         if playing == False:
+            delete_file = str(filename) + ".mp3"
             voice.stop()
             voice.cleanup()
-            if filename in os.listdir('music'):
+            if delete_file in os.listdir('music'):
                 os.remove(f"music/{filename}.mp3")
             else:
                 pass
@@ -111,9 +112,10 @@ async def play_next(ctx, voice_client):
             await asyncio.sleep(1)
         playing = False
         if playing == False:
+            delete_file = str(filename) + ".mp3"
             voice_client.stop()
             voice_client.cleanup()
-            if filename in os.listdir('music'):
+            if delete_file in os.listdir('music'):
                 os.remove(f"music/{filename}.mp3")
             else:
                 pass
