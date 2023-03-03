@@ -125,11 +125,13 @@ async def play_next(ctx, voice_client):
 async def stop(ctx):
     global voice_client
     global queue
+    global counter
     if voice_client:
         voice_client.stop()
         voice_client.cleanup()
         await ctx.send("Stopped playing")
         queue = []
+        counter = 1
         time.sleep(1)
         for file in os.listdir('music'):
             if file.endswith('.mp3'):
