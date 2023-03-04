@@ -72,7 +72,6 @@ async def play(ctx, url=None):
             queue.append(filename)
             print(queue)
             await ctx.send(f"Added {name} to the queue")
-            return
         else:
             source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(f"music/{filename}.mp3"))
             voice.play(source=source)
